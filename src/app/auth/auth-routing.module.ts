@@ -9,10 +9,13 @@ import { NgModule } from "@angular/core";
 
 
 const routes: Routes = [
+  {path:'',
 
-  {path:'login', component: LoginComponent },
-  {path:'register', component: RegisterComponent }
-];
+  children: [
+        {path:'login', component: LoginComponent },
+        {path:'register', component: RegisterComponent },
+        {path:'**', redirectTo:'login' },
+]}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

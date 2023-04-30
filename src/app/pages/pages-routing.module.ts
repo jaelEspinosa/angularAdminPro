@@ -10,16 +10,11 @@ const routes: Routes = [
   {path:'', component: PagesComponent ,
 
   children: [
-    {path:'dasboard', component: DashboardComponent },
+    {path:'dashboard', component: DashboardComponent },
     {path:'progress', component: ProgressComponent },
     {path:'grafica1', component: Grafica1Component },
-
-
-  ]
-},
-
-
-];
+    {path:'**', redirectTo:'dashboard' },
+  ]}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

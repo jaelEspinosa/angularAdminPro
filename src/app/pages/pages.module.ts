@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
 
 import { ComponentsModule } from '../components/components.module';
+import { PagesRoutingModule } from './pages-routing.module';
 
 
 
@@ -31,7 +32,7 @@ import { ComponentsModule } from '../components/components.module';
     CommonModule,
     FormsModule,
     SharedModule,
-    AppRoutingModule,
+    PagesRoutingModule,
     ComponentsModule,
     NgChartsModule
   ]
