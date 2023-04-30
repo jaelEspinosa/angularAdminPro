@@ -7,10 +7,10 @@ import { ProgressComponent } from './progress/progress.component';
 
 
 const routes: Routes = [
-  {path:'dashboard', component: PagesComponent ,
+  {path:'', component: PagesComponent ,
 
   children: [
-    {path:'', component: DashboardComponent },
+    {path:'dasboard', component: DashboardComponent },
     {path:'progress', component: ProgressComponent },
     {path:'grafica1', component: Grafica1Component },
 
