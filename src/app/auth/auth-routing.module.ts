@@ -4,10 +4,6 @@ import { RegisterComponent } from "./register/register.component";
 import { NgModule } from "@angular/core";
 
 
-
-
-
-
 const routes: Routes = [
   {path:'',
 

@@ -5,14 +5,17 @@
   <div class="col-2"></div>
   <div class="col-12 col-sm-4">
      <app-doughnut
-                  [doughnutChartLabels]="doughnutChartLabels"
-                  [doughnutChartData]="doughnutChartData"
+                  title="Ventas"
+                  [labels]="data1"
+                  [data]="inData1"
+                  [colors]="colors2"
                   ></app-doughnut>
   </div>
   <div class="col-12 col-sm-4">
     <app-doughnut
-                 [doughnutChartLabels]="doughnutChartLabels"
-                 [doughnutChartData]="doughnutChartData"
+                  title="Compras"
+                 [labels]="data1"
+                 [data]="inData2"
                  ></app-doughnut>
  </div>
  <div class="col-2"></div>
@@ -22,14 +25,17 @@
   <div class="col-2"></div>
   <div class="col-12 col-sm-4">
      <app-doughnut
-                  [doughnutChartLabels]="doughnutChartLabels"
-                  [doughnutChartData]="doughnutChartData"
+                  title="Ingresos"
+                  [labels]="data2"
+                  [data]="inData1"
                   ></app-doughnut>
   </div>
   <div class="col-12 col-sm-4">
     <app-doughnut
-                 [doughnutChartLabels]="doughnutChartLabels"
-                 [doughnutChartData]="doughnutChartData"
+                  title="Altas"
+                 [labels]="data3"
+                 [data]="inData3"
+                 [colors]="colors3"
                  ></app-doughnut>
  </div>
  <div class="col-2"></div>

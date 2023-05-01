@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {  AfterViewInit, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ChartData, ChartType } from 'chart.js';
 
 @Component({
@@ -7,12 +7,47 @@ import { ChartData, ChartType } from 'chart.js';
   styles: [
   ]
 })
-export class DoughnutComponent {
-
- @Input() doughnutChartLabels: string[] = [];
+export class DoughnutComponent implements OnChanges{
 
 
- @Input() doughnutChartData!: ChartData<'doughnut'>
+
+
+@Input('labels') doughnutChartLabels: string[]= [ 'label-1','label-2','label-3' ]
+
+@Input() title: string = 'Sin titulo'
+
+@Input() data: number[] =  [300, 450, 100]
+
+@Input() colors: string [] =  ['#6857E6', '#009FEE', '#F02059']
+
+public  doughnutChartData: ChartData<'doughnut'> = {
+  labels: this.doughnutChartLabels,
+  datasets: [
+    { data: this.data,
+      backgroundColor: this.colors
+     },
+
+  ]
+ };
+
+ constructor(){}
+ ngOnChanges(changes: SimpleChanges) {
+
+  this.doughnutChartData = {
+    labels: this.doughnutChartLabels,
+    datasets: [
+      { data: this.data,
+        backgroundColor: this.colors
+       },
+
+    ]
+   };
+
+ }
+
+
+
+
 
  public doughnutChartType: ChartType = 'doughnut';
 
