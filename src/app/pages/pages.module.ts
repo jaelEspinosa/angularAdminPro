@@ -11,6 +11,7 @@ import { NgChartsModule } from 'ng2-charts';
 
 import { ComponentsModule } from '../components/components.module';
 import { PagesRoutingModule } from './pages-routing.module';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -19,14 +20,16 @@ import { PagesRoutingModule } from './pages-routing.module';
     DashboardComponent,
     ProgressComponent,
     Grafica1Component,
-    PagesComponent
+    PagesComponent,
+    AccountSettingsComponent
 
   ],
   exports:[
     DashboardComponent,
     ProgressComponent,
     Grafica1Component,
-    PagesComponent
+    PagesComponent,
+    AccountSettingsComponent
   ],
   imports: [
     CommonModule,
