@@ -44,7 +44,7 @@ googleInit() {
 
 handleCredentialResponse(response: any){
 
-   this.usuarioService.loginGoogle( response.credential)
+   this.usuarioService.loginGoogle( response.credential )
      .subscribe(resp => {
        this.ngZone.run(() =>{
 

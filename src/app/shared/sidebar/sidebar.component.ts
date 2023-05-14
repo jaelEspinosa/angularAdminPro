@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Usuario } from 'src/app/models/usuario.model';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -12,10 +13,14 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class SidebarComponent {
 
   menuItems: any[];
+  public usuario: Usuario;
+
+
 
   constructor( private sidebarService: SidebarService,
                 private usuarioService: UsuarioService ){
 this.menuItems = sidebarService.menu;
+this.usuario = usuarioService.usuario
 
   }
 
@@ -27,3 +32,14 @@ logout(){
 }
 
 }
+
+
+/*   constructor( private usuarioService: UsuarioService ){
+   this.imgUrl = usuarioService.usuario.imagenUrl
+   console.log(this.imgUrl);
+
+
+  }
+
+ public usuario: Usuario = this.usuarioService.usuario
+ public imgUrl = '' */

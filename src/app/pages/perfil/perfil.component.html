@@ -1,0 +1,117 @@
+<div class="row animated fadeIn">
+  <div class="col-md-6">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Perfil de usuario</h4>
+            <h6 class="card-subtitle">ajustes...</h6>
+            <form class="form p-t-20"
+                  autocomplete="off"
+                  [formGroup]="perfilForm"
+                  (ngSubmit)="actualizarPerfil()"
+
+            >
+                <div class="form-group">
+                    <label for="exampleInputuname">Nombre</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="ti-user"></i></div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputuname"
+                            placeholder="Nombre"
+                            formControlName="nombre"
+
+                            >
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputuname">Apellidos</label>
+                  <div class="input-group">
+                      <div class="input-group-addon"><i class="ti-user"></i></div>
+                      <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputuname"
+                          placeholder="Apellidos"
+                          formControlName="apellidos"
+
+                          >
+                  </div>
+              </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="ti-email"></i></div>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="exampleInputEmail1"
+                            placeholder="Enter email"
+                            formControlName="email"
+                            [readOnly]="usuario.google"
+                            >
+                      </div>
+                    </div>
+
+                <button
+                      type="submit"
+                      class="btn btn-success btn-block waves-effect waves-light m-r-10"
+                      [disabled]="perfilForm.invalid"
+                      >
+                  <i class="fa fa-save"></i>
+                 Guardar cambios</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+  <div class="card">
+      <div class="card-body animated fadeIn">
+          <h4 class="card-title">Avatar</h4>
+          <h6 class="card-subtitle">Imagen de usuario</h6>
+          <div style="height: 260px;" class="d-flex align-items-center justify-content-center">
+            <img
+                  *ngIf="!imgTemp"
+                  class="pointer animated fadeIn"
+                  style="max-height: 200px;
+
+                         display: block;
+                         border-radius: 8px;
+                         box-shadow: 8px 8px 10px gray;"
+                  [src]="usuario.imagenUrl"
+                  alt="img"
+                  (click)="activarInput()"
+                  >
+            <img
+                  *ngIf="imgTemp"
+                  class="pointer animated fadeIn"
+                  style="max-height: 200px;
+
+                         display: block;
+                         border-radius: 8px;
+                         box-shadow: 8px 8px 10px gray;"
+                  [src]="imgTemp"
+                  alt="img"
+                  (click)="activarInput()"
+                  >
+          </div>
+
+          <input #inputFile
+              style="display: none;"
+              type="file"
+              (change)="cambiarImagen($any($event.target).files[0])"
+              >
+          <br>
+          <br>
+          <button type="button"
+                  class="btn btn-success btn-block waves-effect waves-light m-r-10"
+                  [disabled]="!imgUpload"
+                  (click)="imageUpload()"
+                  >
+            <i class="fa fa-save"></i>
+            Cambiar Imagen</button>
+      </div>
+    </div>
+ </div>
+</div>
