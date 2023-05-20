@@ -4,17 +4,20 @@ import { IncrementadorComponent } from './incrementador/incrementador.component'
 import { FormsModule } from '@angular/forms';
 import { DoughnutComponent } from './doughnut/doughnut.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ModalImagenComponent } from './modal-imagen/modal-imagen.component';
 
 
 
 @NgModule({
   declarations: [
     IncrementadorComponent,
-    DoughnutComponent
+    DoughnutComponent,
+    ModalImagenComponent
   ],
   exports:[
     IncrementadorComponent,
     DoughnutComponent,
+    ModalImagenComponent,
 
   ],
   imports: [

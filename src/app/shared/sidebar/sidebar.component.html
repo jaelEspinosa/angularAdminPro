@@ -8,13 +8,13 @@
               <nav class="sidebar-nav">
                   <ul id="sidebarnav">
                       <li class="user-profile">
-                          <a class="has-arrow waves-effect waves-dark d-flex align-items-center text-center" href="#" aria-expanded="false">
+                          <a class="has-arrow waves-effect waves-dark d-flex align-items-center justify-content-around" href="#" aria-expanded="false">
                             <div class="foto-perfil">
                               <img [src]="usuario.imagenUrl" alt="user" />
                             </div>
                             <div>
                               <span class="hide-menu">{{usuario.nombre}}</span>
-                              <span class="hide-menu"> {{usuario.apellidos === usuario.nombre ? "" : usuario.apellidos}}</span>
+                              <!-- <span class="hide-menu"> {{usuario.apellidos === usuario.nombre ? "" : usuario.apellidos}}</span> -->
                             </div>
                           </a>
                           <ul aria-expanded="false" class="collapse">

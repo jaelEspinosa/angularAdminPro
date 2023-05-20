@@ -9,7 +9,7 @@ export class SidebarService {
   menu: any[] = [
 
     {
-      title: 'Dashboard!!!',
+      title: 'Dashboard',
       icon: 'mdi mdi-gauge',
       submenu: [
         { title: 'Main',url: 'dashboard' },
@@ -17,6 +17,17 @@ export class SidebarService {
         { title: 'Gráficas',url: 'grafica1' },
         { title: 'Promesas',url: 'promesas' },
         { title: 'RXJS',url: 'rxjs' }
+
+      ]
+    },
+    {
+      title: 'Mantenimiento',
+      icon: 'mdi mdi-folder-lock-open',
+      submenu: [
+        { title: 'Usuarios',url: 'usuarios' },
+        { title: 'Hospitales',url: 'hospitales' },
+        { title: 'Médicos',url: 'medicos' },
+
 
       ]
     }

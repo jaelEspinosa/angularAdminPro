@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, NgZone } from '@angular/core';
-import { LoginForm, RegisterForm } from '../interfaces/register-form.interface';
+import { CargarUsuario, LoginForm, RegisterForm } from '../interfaces/register-form.interface';
 import { environment } from '../../environments/environment';
 import { Observable, catchError, map, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
@@ -21,6 +21,14 @@ export class UsuarioService {
 
 get token(): string {
   return localStorage.getItem('token') || '';
+}
+
+get headers(){
+  return{
+     headers:{
+      "x-token":this.token
+     }
+  }
 }
 //TODO cuenta gmail en duro hay que revisar el logout
 
@@ -107,5 +115,41 @@ public usuario!: Usuario;
           }
         })
    };
+
+
+
+cargarUsuarios (desde: number = 0 , limit: number = 5):Observable<CargarUsuario> {
+
+  /* url: http://localhost:3000/api/usuarios?desde=5&limit=3 */
+
+  return this.http.get<CargarUsuario>(`${ base_url }/usuarios?desde=${ desde }&limit=${ limit }`, this.headers)
+   .pipe(
+    map( resp =>{
+      const usuarios = resp.usuarios.map(
+        user => new Usuario(user.nombre, user.apellidos, user.email, '', user.role, user.google, user.img, user.uid)
+      );
+
+      return {
+        totalUsuarios: resp.totalUsuarios,
+        usuarios
+      };
+    })
+   )
+};
+
+eliminarUsuario (usuario: Usuario) {
+  /* url : http://localhost:3000/api/usuarios/6453b90c41546358a286e257 */
+  const url =`${base_url}/usuarios/${usuario.uid}`
+
+  return this.http.delete(url, this.headers)
+
+}
+
+guardarUsuario( usuario: Usuario){
+
+
+  return this.http.put(`${base_url}/usuarios/${usuario.uid}`, usuario, this.headers)
+};
+
 
 }
