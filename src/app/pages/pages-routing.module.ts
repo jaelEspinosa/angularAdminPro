@@ -13,6 +13,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 // Mantenimiento
 
 import { UsuariosComponent } from './mantenimiento/usuarios/usuarios.component';
+import { HospitalesComponent } from './mantenimiento/hospitales/hospitales.component';
+import { MedicosComponent } from './mantenimiento/medicos/medicos.component';
 
 
 const routes: Routes = [
@@ -30,6 +32,8 @@ const routes: Routes = [
     // Mantenimiento
 
     {path:'usuarios', component: UsuariosComponent, data:{titulo: 'Usuarios'}},
+    {path:'hospitales', component: HospitalesComponent, data:{titulo: 'Hospitales'}},
+    {path:'medicos', component: MedicosComponent, data:{titulo: 'Médicos'}},
 
     // Por defecto
     {path:'**', redirectTo:'dashboard' },
